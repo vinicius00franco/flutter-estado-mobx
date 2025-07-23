@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../themes/app_colors.dart';
 
 class PaymentTotal extends StatelessWidget {
   const PaymentTotal({Key? key, required this.total}) : super(key: key);
@@ -14,7 +15,7 @@ class PaymentTotal extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               const Text("Total:",
-                  style: TextStyle(color: Color(0xFF9D9D9D))),
+                  style: TextStyle(color: AppColors.totalGray)),
               Text("R\$ ${total.toStringAsFixed(2)}",
                   style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
             ],

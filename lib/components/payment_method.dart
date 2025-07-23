@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../themes/app_colors.dart';
 
 class PaymentMethod extends StatelessWidget {
 const PaymentMethod({ Key? key }) : super(key: key);
@@ -17,7 +18,7 @@ const PaymentMethod({ Key? key }) : super(key: key);
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const Text("VISA Classic", style: TextStyle(fontWeight: FontWeight.w500),),
-                Text("****-6789", style: TextStyle(color: Color(0xFF9C9C9C)),),
+                Text("****-6789", style: TextStyle(color: AppColors.textGray)),
               ],
             ),
           ),

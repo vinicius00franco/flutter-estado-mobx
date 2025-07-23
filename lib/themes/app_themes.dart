@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'app_colors.dart';
 
 class AppThemes {
   // Cores primárias do app
-  static const Color primaryColor = Color(0xFF6750A4);
-  static const Color primaryLightColor = Color(0xFF9A82DB);
-  static const Color primaryDarkColor = Color(0xFF4F378B);
+  static const Color primaryColor = AppColors.primaryColor;
+  static const Color primaryLightColor = AppColors.primaryLightColor;
+  static const Color primaryDarkColor = AppColors.primaryDarkColor;
 
   // Tema claro
   static ThemeData get lightTheme {
