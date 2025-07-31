@@ -11,5 +11,7 @@ class AppColors {
   static const Color primaryLightColor = Color(0xFF9A82DB);
   static const Color primaryDarkColor = Color(0xFF4F378B);
   static const Color totalGray = Color(0xFF9D9D9D);
+  static const Color cardContrast = Color(0xFFE1E4F2); // Cor de contraste para cartões
+  static const Color cardDarkContrast = Color(0xFF2A2D3A); // Cor de contraste suave para o tema escuro
   // Adicione outras cores aqui conforme necessário
 }
