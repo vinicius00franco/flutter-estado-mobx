@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
 class SearchInput extends StatelessWidget {
-  const SearchInput({super.key, required this.searchTextController});
+  const SearchInput({
+    super.key,
+    required this.searchTextController,
+    this.textColor,
+    this.iconColor,
+  });
+
   final TextEditingController searchTextController;
+  final Color? textColor;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -10,13 +18,28 @@ class SearchInput extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: TextFormField(
         controller: searchTextController,
-        decoration: const InputDecoration(
-          contentPadding: EdgeInsets.all(8.0),
-          constraints: BoxConstraints(maxHeight: 45),
+        style: TextStyle(color: textColor), // Aplica a cor do texto
+        decoration: InputDecoration(
+          contentPadding: const EdgeInsets.all(8.0),
+          constraints: const BoxConstraints(maxHeight: 45),
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(50))),
+            borderRadius: const BorderRadius.all(Radius.circular(50)),
+            borderSide: BorderSide(color: textColor ?? Colors.white), // Borda branca fixa
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: const BorderRadius.all(Radius.circular(50)),
+            borderSide: BorderSide(color: textColor ?? Colors.white), // Borda branca fixa para o estado habilitado
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: const BorderRadius.all(Radius.circular(50)),
+            borderSide: BorderSide(color: textColor ?? Colors.white, width: 2.0), // Borda branca fixa para o estado focado
+          ),
           hintText: "Buscar um item",
-          prefixIcon: Icon(Icons.search),
+          hintStyle: TextStyle(color: textColor?.withAlpha(180)), // Cor do hint text com opacidade ajustada
+          prefixIcon: Icon(
+            Icons.search,
+            color: iconColor, // Aplica a cor do ícone
+          ),
         ),
       ),
     );
