@@ -12,42 +12,45 @@ class AppThemes {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: primaryColor,
+      colorScheme: ColorScheme(
+        primary: AppColors.royalBlue,
+        onPrimary: AppColors.lightText,
+        surface: AppColors.lightBackground,
+        onSurface: AppColors.lightText,
+        secondary: AppColors.accentGray,
+        onSecondary: AppColors.lightText,
+        error: Colors.red,
+        onError: AppColors.lightText,
         brightness: Brightness.light,
       ),
       appBarTheme: AppBarTheme(
         elevation: 0,
         centerTitle: true,
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.black87,
+        backgroundColor: AppColors.lightBackground,
+        foregroundColor: AppColors.lightText,
         titleTextStyle: TextStyle(
-          color: Colors.black87,
+          color: AppColors.lightText,
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
       ),
-      cardTheme: const CardThemeData(
+      cardTheme: CardThemeData(
+        color: AppColors.lightBackground,
         elevation: 2,
         shadowColor: Colors.black12,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.royalBlue,
+          foregroundColor: AppColors.lightText,
           elevation: 2,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
         ),
-      ),
-      inputDecorationTheme: InputDecorationTheme(
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-        filled: true,
-        fillColor: Colors.grey[50],
       ),
     );
   }
@@ -57,42 +60,45 @@ class AppThemes {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: primaryColor,
+      colorScheme: ColorScheme(
+        primary: AppColors.royalBlue,
+        onPrimary: AppColors.darkText,
+        surface: AppColors.darkBackground,
+        onSurface: AppColors.darkText,
+        secondary: AppColors.accentGray,
+        onSecondary: AppColors.darkText,
+        error: Colors.red,
+        onError: AppColors.darkText,
         brightness: Brightness.dark,
       ),
       appBarTheme: AppBarTheme(
         elevation: 0,
         centerTitle: true,
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.white,
+        backgroundColor: AppColors.darkBackground,
+        foregroundColor: AppColors.darkText,
         titleTextStyle: TextStyle(
-          color: Colors.white,
+          color: AppColors.darkText,
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
       ),
-      cardTheme: const CardThemeData(
+      cardTheme: CardThemeData(
+        color: AppColors.darkBackground,
         elevation: 2,
         shadowColor: Colors.black26,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.royalBlue,
+          foregroundColor: AppColors.darkText,
           elevation: 2,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
         ),
-      ),
-      inputDecorationTheme: InputDecorationTheme(
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-        filled: true,
-        fillColor: Colors.grey[900],
       ),
     );
   }

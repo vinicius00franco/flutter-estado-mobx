@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:panucci_delivery/components/contador.dart';
-import '../themes/app_colors.dart';
 
 import '../models/item.dart';
 
@@ -11,7 +10,7 @@ final Item item;
   @override
   Widget build(BuildContext context){
     return Card(
-      color: AppColors.cardBackground,
+      color: Theme.of(context).cardColor, // Usar a cor do tema atual
       elevation: 0,
       clipBehavior: Clip.hardEdge,
       child: ConstrainedBox(

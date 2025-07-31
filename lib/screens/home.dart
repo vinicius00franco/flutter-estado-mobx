@@ -8,6 +8,7 @@ import '../components/search_input.dart';
 import '../components/theme_toggle_button.dart';
 import '../store/carrinho_store.dart';
 import '../screens/checkout.dart';
+import '../themes/app_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -20,6 +21,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColors.royalBlue,
         title: Text('Panucci Delivery'),
         actions: [
           ThemeToggleButton(),
@@ -29,7 +31,16 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverToBoxAdapter(
-            child: SearchInput(searchTextController: searchTextController),
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.royalBlue,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30.0),
+                  bottomRight: Radius.circular(30.0),
+                ),
+              ),
+              child: SearchInput(searchTextController: searchTextController),
+            ),
           ),
           const SliverToBoxAdapter(
             child: CategoriaText(titulo: "Mais comprados"),
