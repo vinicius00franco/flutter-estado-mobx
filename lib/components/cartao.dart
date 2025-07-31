@@ -44,7 +44,7 @@ final Item item;
                 ],
               ),
             ),
-            
+
           ],
         ),
       ),

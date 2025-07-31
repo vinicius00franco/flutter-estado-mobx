@@ -22,8 +22,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.royalBlue,
-        title: Text('Panucci Delivery'),
-        actions: [
+        title: const Text('Panucci Delivery'),
+        actions: const [
           ThemeToggleButton(),
           SizedBox(width: 8),
         ],
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
         slivers: <Widget>[
           SliverToBoxAdapter(
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: AppColors.royalBlue,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30.0),
