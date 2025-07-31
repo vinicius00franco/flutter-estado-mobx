@@ -5,7 +5,7 @@ import '../models/item.dart';
 import 'cartao.dart';
 
 class ItemList extends StatelessWidget {
-  const ItemList({Key? key, required this.categoria}) : super(key: key);
+  const ItemList({super.key, required this.categoria});
   final String categoria;
   final List<Item> cardapio = todosOsItems;
 
@@ -17,13 +17,11 @@ class ItemList extends StatelessWidget {
         constraints: const BoxConstraints(maxHeight: 150),
         child: ListView.builder(
           itemBuilder: (context, index) {
-            if(cardapio[index].categoria == categoria) {
+            if (cardapio[index].categoria == categoria) {
               return Cartao(item: cardapio[index]);
-            } else {
-              return Container();
             }
+            return const SizedBox.shrink(); // Retorno padrão explícito
           },
-          scrollDirection: Axis.horizontal,
           itemCount: cardapio.length,
         ),
       ),

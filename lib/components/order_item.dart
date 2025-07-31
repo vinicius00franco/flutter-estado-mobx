@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:panucci_delivery/models/item.dart';
 
 class OrderItem extends StatelessWidget {
-  const OrderItem(
-      {Key? key,
-      required this.item})
-      : super(key: key);
+  const OrderItem({super.key, required this.item});
   final Item item;
 
   @override
@@ -33,7 +30,10 @@ class OrderItem extends StatelessWidget {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Text(item.nome, style: const TextStyle(fontWeight: FontWeight.w600),),
+                    child: Text(
+                      item.nome,
+                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
                   ),
                   Text(item.preco.toStringAsFixed(2)),
                 ],

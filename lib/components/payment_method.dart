@@ -6,18 +6,18 @@ class PaymentMethod extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        const Image(
+    return const Row(
+        children: <Widget>[
+        Image(
           width: 30,
           image: AssetImage("assets/images/visa.png"),
         ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const <Widget>[
+              children: <Widget>[
                 Text(
                   "VISA Classic",
                   style: TextStyle(fontWeight: FontWeight.w500),
@@ -30,7 +30,7 @@ class PaymentMethod extends StatelessWidget {
             ),
           ),
         ),
-        const Icon(Icons.arrow_forward_ios),
+        Icon(Icons.arrow_forward_ios),
       ],
     );
   }

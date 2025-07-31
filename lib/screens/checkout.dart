@@ -6,7 +6,7 @@ import '../components/payment_method.dart';
 import '../components/payment_total.dart';
 
 class Checkout extends StatelessWidget {
-  const Checkout({Key? key, required this.homeContext}) : super(key: key);
+  const Checkout({super.key, required this.homeContext});
   final BuildContext homeContext;
 
   @override
@@ -15,7 +15,7 @@ class Checkout extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Checkout'),
+          title: const Text('Checkout'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -56,7 +56,9 @@ class Checkout extends StatelessWidget {
                   ),
                 ),
               ),
-              SliverToBoxAdapter(child: PaymentTotal(total: carrinhoStore.totalDaCompra),),
+              SliverToBoxAdapter(
+                child: PaymentTotal(total: carrinhoStore.totalDaCompra),
+              ),
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Align(

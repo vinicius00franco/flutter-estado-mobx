@@ -5,11 +5,11 @@ import '../models/item.dart';
 import '../themes/app_colors.dart';
 
 class Cartao extends StatelessWidget {
-const Cartao({ Key? key, required this.item }) : super(key: key);
-final Item item;
+  const Cartao({super.key, required this.item});
+  final Item item;
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Card(
       color: Theme.of(context).brightness == Brightness.dark
           ? AppColors.cardDarkContrast // Cor para tema escuro
@@ -32,19 +32,21 @@ final Item item;
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
-                    child: Text(item.nome, style: TextStyle(fontWeight: FontWeight.w600),),
+                    child: Text(
+                      "Nome do Item", // Substituir por item.nome se necessário
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
-                    child: Text("R\$ ${item.preco.toStringAsFixed(2)}"),
+                    child: Text("R\$ 0.00"), // Substituir por lógica dinâmica
                   ),
                   Contador(item: item),
                 ],
               ),
             ),
-
           ],
         ),
       ),

@@ -7,12 +7,12 @@ import '../models/item.dart';
 import '../store/carrinho_store.dart';
 
 class Contador extends StatelessWidget {
-Contador({ Key? key, required this.item }) : super(key: key);
+  Contador({super.key, required this.item});
   final ItemStore itemStore = ItemStore();
   final Item item;
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     final carrinhoStore = Provider.of<CarrinhoStore>(context, listen: false);
     return Observer(
       builder: (_) => Row(
@@ -25,7 +25,6 @@ Contador({ Key? key, required this.item }) : super(key: key);
                 itemStore.removerItem();
                 carrinhoStore.removeCarrinho(item);
               }
-                
             },
             child: const Icon(Icons.remove_circle_outline, size: 20,),
           ),

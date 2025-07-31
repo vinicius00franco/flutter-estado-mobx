@@ -11,9 +11,9 @@ import '../screens/checkout.dart';
 import '../themes/app_colors.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({super.key}) : searchTextController = TextEditingController();
 
-  final TextEditingController searchTextController = TextEditingController();
+  final TextEditingController searchTextController;
 
   @override
   Widget build(BuildContext context) {
@@ -73,23 +73,23 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => CheckoutScreen(),
+                                builder: (context) => Checkout(homeContext: context),
                               ),
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            minimumSize: Size(double.infinity, 50),
+                            minimumSize: const Size(double.infinity, 50),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Ver carrinho'),
+                              const Text('Ver carrinho'),
                               Text('${carrinhoStore.totalItens} itens'),
                             ],
                           ),
                         ),
                       )
-                    : SizedBox.shrink(),
+                    : const SizedBox.shrink(),
               ),
             ),
           ),

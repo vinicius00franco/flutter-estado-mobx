@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../store/theme_store.dart';
 
 class ThemeToggleButton extends StatelessWidget {
-  const ThemeToggleButton({Key? key}) : super(key: key);
+  const ThemeToggleButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,42 +24,36 @@ class ThemeToggleButton extends StatelessWidget {
           PopupMenuItem<ThemeMode>(
             value: ThemeMode.system,
             child: Row(
-              children: [
+              children: const [
                 Icon(Icons.brightness_auto),
                 SizedBox(width: 8),
                 Text('Sistema'),
-                if (themeStore.themeMode == ThemeMode.system)
-                  Spacer(),
-                if (themeStore.themeMode == ThemeMode.system)
-                  Icon(Icons.check, color: Theme.of(context).primaryColor),
+                Spacer(),
+                Icon(Icons.check, color: Colors.blue),
               ],
             ),
           ),
           PopupMenuItem<ThemeMode>(
             value: ThemeMode.light,
-            child: Row(
+            child: const Row(
               children: [
                 Icon(Icons.light_mode),
                 SizedBox(width: 8),
                 Text('Claro'),
-                if (themeStore.themeMode == ThemeMode.light)
-                  Spacer(),
-                if (themeStore.themeMode == ThemeMode.light)
-                  Icon(Icons.check, color: Theme.of(context).primaryColor),
+                Spacer(),
+                Icon(Icons.check, color: Colors.blue),
               ],
             ),
           ),
           PopupMenuItem<ThemeMode>(
             value: ThemeMode.dark,
-            child: Row(
+            child: const Row(
               children: [
                 Icon(Icons.dark_mode),
                 SizedBox(width: 8),
                 Text('Escuro'),
-                if (themeStore.themeMode == ThemeMode.dark)
-                  Spacer(),
-                if (themeStore.themeMode == ThemeMode.dark)
-                  Icon(Icons.check, color: Theme.of(context).primaryColor),
+                Spacer(),
+                Icon(Icons.check, color: Colors.blue),
               ],
             ),
           ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CategoriaText extends StatelessWidget {
-  const CategoriaText({Key? key, required this.titulo}) : super(key: key);
+  const CategoriaText({super.key, required this.titulo});
   final String titulo;
 
   @override

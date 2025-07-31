@@ -12,7 +12,7 @@ class AppThemes {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
-      colorScheme: ColorScheme(
+      colorScheme: const ColorScheme(
         primary: AppColors.royalBlue,
         onPrimary: AppColors.lightText,
         surface: AppColors.lightBackground,
@@ -23,7 +23,7 @@ class AppThemes {
         onError: AppColors.lightText,
         brightness: Brightness.light,
       ),
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         elevation: 0,
         centerTitle: true,
         backgroundColor: AppColors.lightBackground,
@@ -34,11 +34,11 @@ class AppThemes {
           fontWeight: FontWeight.w600,
         ),
       ),
-      cardTheme: CardThemeData(
+      cardTheme: const CardThemeData(
         color: AppColors.lightBackground,
         elevation: 2,
         shadowColor: Colors.black12,
-        shape: const RoundedRectangleBorder(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
@@ -47,8 +47,8 @@ class AppThemes {
           backgroundColor: AppColors.royalBlue,
           foregroundColor: AppColors.lightText,
           elevation: 2,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
         ),
       ),
@@ -60,7 +60,7 @@ class AppThemes {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      colorScheme: ColorScheme(
+      colorScheme: const ColorScheme(
         primary: AppColors.royalBlue,
         onPrimary: AppColors.darkText,
         surface: AppColors.darkBackground,
@@ -71,7 +71,7 @@ class AppThemes {
         onError: AppColors.darkText,
         brightness: Brightness.dark,
       ),
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         elevation: 0,
         centerTitle: true,
         backgroundColor: AppColors.darkBackground,
@@ -82,11 +82,11 @@ class AppThemes {
           fontWeight: FontWeight.w600,
         ),
       ),
-      cardTheme: CardThemeData(
+      cardTheme: const CardThemeData(
         color: AppColors.darkBackground,
         elevation: 2,
         shadowColor: Colors.black26,
-        shape: const RoundedRectangleBorder(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
@@ -95,8 +95,8 @@ class AppThemes {
           backgroundColor: AppColors.royalBlue,
           foregroundColor: AppColors.darkText,
           elevation: 2,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
         ),
       ),
