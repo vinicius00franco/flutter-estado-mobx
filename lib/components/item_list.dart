@@ -16,6 +16,7 @@ class ItemList extends StatelessWidget {
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxHeight: 150),
         child: ListView.builder(
+          scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             if (cardapio[index].categoria == categoria) {
               return Cartao(item: cardapio[index]);

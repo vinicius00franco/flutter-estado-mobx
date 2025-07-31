@@ -65,35 +65,43 @@ class HomeScreen extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Observer(
-                builder: (_) => !carrinhoStore.listaVazia
-                    ? Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Checkout(homeContext: context),
-                              ),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(double.infinity, 50),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text('Ver carrinho'),
-                              Text('${carrinhoStore.totalItens} itens'),
-                            ],
-                          ),
-                        ),
-                      )
-                    : const SizedBox.shrink(),
+                builder: (_) => _buildCarrinhoButton(context, carrinhoStore),
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildCarrinhoButton(BuildContext context, CarrinhoStore carrinhoStore) {
+    if (carrinhoStore.listaVazia) {
+      return const SizedBox.shrink();
+    }
+
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: ElevatedButton(
+        onPressed: () => _navegarParaCheckout(context),
+        style: ElevatedButton.styleFrom(
+          minimumSize: const Size(double.infinity, 50),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Ver carrinho'),
+            Text('${carrinhoStore.totalItens} itens'),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _navegarParaCheckout(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Checkout(homeContext: context),
       ),
     );
   }

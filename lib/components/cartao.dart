@@ -32,16 +32,16 @@ class Cartao extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 8.0),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
                     child: Text(
-                      "Nome do Item", // Substituir por item.nome se necessário
-                      style: TextStyle(fontWeight: FontWeight.w600),
+                      item.nome,
+                      style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 8.0),
-                    child: Text("R\$ 0.00"), // Substituir por lógica dinâmica
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: Text("R\$ ${item.preco.toStringAsFixed(2)}"),
                   ),
                   Contador(item: item),
                 ],
